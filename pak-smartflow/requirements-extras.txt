@@ -1,0 +1,30 @@
+# Pak-SmartFlow — optional extras
+#
+# Nothing here is required. The engine, the CLI and all tests run on a bare
+# Python interpreter with no third-party packages.
+#
+# For the dashboard (streamlit + pandas only), install the lean file instead:
+#
+#     pip install -r requirements.txt
+#
+# Everything below unlocks one *additive* capability, and every one of them has a
+# working fallback in the core.
+#
+#     pip install -r requirements-extras.txt
+
+# --- Real object detection ------------------------------------------------
+# Unlocks: vision/yolo_adapter.py -> YoloDetector
+# Fallback: synthetic frames in smartflow/scenarios.py
+# Note: pulls in torch. Large — install only when you have footage to test with.
+# ultralytics>=8.2
+
+# --- Urdu voice notes -----------------------------------------------------
+# Unlocks: generating real .mp3 notices for the stage demo
+# Fallback: Urdu text templates in smartflow/messages.py
+# edge-tts>=6.1
+
+# --- LLM wording (optional polish, never required) ------------------------
+# Unlocks: GroqExplanationWriter in smartflow/integrations.py
+# Requires: GROQ_API_KEY in the environment or .streamlit/secrets.toml
+# Fallback: TemplateExplanationWriter, fully deterministic and offline
+# groq>=0.9

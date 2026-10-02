@@ -1,0 +1,18 @@
+# Pak-SmartFlow — dependencies for the hosted dashboard.
+#
+# Streamlit Community Cloud installs from this file. It contains ONLY what the
+# optional dashboard needs. Nothing here is required by the core package:
+#
+#     smartflow/  imports nothing outside the Python standard library.
+#
+# That claim is enforced by the test suite and re-proved in CI
+# (.github/workflows/tests.yml), so it cannot rot. If you only want the engine
+# and the command line, install nothing:
+#
+#     python -m smartflow demo 4
+#
+# Upper bounds are set because a future major release of either package could
+# change rendering APIs this app depends on. Verified against the versions
+# resolved on Python 3.12.
+streamlit>=1.36,<2
+pandas>=2.0,<4

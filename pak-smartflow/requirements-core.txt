@@ -1,0 +1,24 @@
+# Pak-SmartFlow — core requirements
+#
+# Intentionally empty, and that is a feature.
+#
+# The core package (smartflow/) imports nothing outside the Python standard
+# library. A hackathon demo must start on a fresh laptop with no network, no
+# wheels and no API keys, and this file is the machine-readable statement of
+# that promise.
+#
+# Install it if you like — pip will do nothing:
+#
+#     pip install -r requirements-core.txt
+#
+# Then verify the claim yourself:
+#
+#     python -c "import sys; before=set(sys.modules); import smartflow; \
+#       print([m for m in sys.modules if m not in before and \
+#              'site-packages' in (getattr(sys.modules[m],'__file__','') or '')])"
+#
+# Requires Python 3.11 or newer. Developed and tested on 3.12.
+#
+# The hosted dashboard needs real dependencies; those live in requirements.txt.
+# Everything optional (real detector, Urdu voice, LLM wording) is in
+# requirements-extras.txt. Nothing in either file is required for the demo.
